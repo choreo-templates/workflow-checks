@@ -10,7 +10,7 @@ const CheckCodes = {
 }
 const DOCKER_FILE_PATH = process.env.DOCKER_FILE_PATH;
 const SCAN_RESULT_DIR = process.env.SCAN_RESULT_DIR;
-const DOCKER_IMAGE = process.env.DOCKER_IMAGE;
+const DOCKER_IMAGE = process.env.DOCKER_TEMP_IMAGE;
 
 async function run() {
     try {
