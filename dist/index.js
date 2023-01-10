@@ -4131,7 +4131,7 @@ async function run() {
                 await exec(`checkov -f ${DOCKER_FILE_PATH} --framework dockerfile --check CKV_DOCKER_3,CKV_DOCKER_8,CKV_CHOREO_1 -o json --quiet --external-checks-dir ../../../../../custom-checkov-policy --output-file-path ${SCAN_RESULT_DIR}`);
                 break;
             case CheckCodes.TRIVY_SCAN:
-                await exec(`TRIVY_NEW_JSON_SCHEMA=true trivy image --format=table --severity=CRITICAL --output=${SCAN_RESULT_DIR}/trivyScanResult --exit-code=1 --ignore-unfixed=true ${DOCKER_IMAGE}`);
+                await exec(`trivy image --format=table --severity=CRITICAL --output=${SCAN_RESULT_DIR}/trivyScanResult --exit-code=1 --ignore-unfixed=true ${DOCKER_IMAGE}`);
                 break;
             case CheckCodes.VALIDATE_OPENAPI:
                 const oasFilePath = core.getInput('oasFilePath', { required: true });
