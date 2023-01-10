@@ -4135,6 +4135,7 @@ async function run() {
                 break;
             case CheckCodes.VALIDATE_OPENAPI:
                 const oasFilePath = core.getInput('oasFilePath', { required: true });
+                await exec(`rm -rf ${SCAN_RESULT_DIR}/${OAS_VADATION_REPORT_GITOPS_FILE_NAME} && touch ${SCAN_RESULT_DIR}/${OAS_VADATION_REPORT_GITOPS_FILE_NAME}`);
                 await exec(`swagger-cli validate ${oasFilePath} &> ${SCAN_RESULT_DIR}/${OAS_VADATION_REPORT_GITOPS_FILE_NAME}`);
                 await exec(`swagger-cli bundle ${oasFilePath} --outfile ${GITOPS_CLONE}/${OAS_GITOPS_FILE_NAME}`);
                 break;
