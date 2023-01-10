@@ -1,0 +1,16 @@
+name: 'Workflow Checks'
+description: 'Run workflow checks & validations'
+inputs:
+  type:
+    description: 'Workflow type'
+    required: false
+    default: 'byoc'
+  checkCode:
+    description: 'Check Code'
+    required: true
+  oasFilePath:
+    description: 'OpenAPI spec file path'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
