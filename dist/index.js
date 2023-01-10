@@ -4122,6 +4122,8 @@ const DOCKER_FILE_PATH = process.env.DOCKER_FILE_PATH;
 const SCAN_RESULT_DIR = process.env.SCAN_RESULT_DIR;
 const DOCKER_IMAGE = process.env.DOCKER_TEMP_IMAGE;
 const OAS_VADATION_REPORT_GITOPS_FILE_NAME = process.env.OAS_VADATION_REPORT_GITOPS_FILE_NAME;
+const GITOPS_CLONE = process.env.GITOPS_CLONE;
+const OAS_GITOPS_FILE_NAME = process.env.OAS_GITOPS_FILE_NAME;
 
 async function run() {
     try {
